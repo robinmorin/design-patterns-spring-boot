@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="30d251da-6d04-4344-a4df-7271d5a21902" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/DesignPatternsSpringBootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/DesignPatternsSpringBootApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/annotation/UseObservers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/annotation/UseObservers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/config/InitConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/config/InitConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/config/OpenApiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/config/OpenApiConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/controller/ControlAdviceHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/controller/ControlAdviceHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/controller/ObserverDepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/controller/ObserverDepartmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/controller/ObserverEmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/controller/ObserverEmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/controller/ObserverPositionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/controller/ObserverPositionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventGet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventGet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventNew.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventNew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventSendEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventSendEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventSendSMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventSendSMS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventSendToAccounting.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventSendToAccounting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventSendToManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventSendToManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/model/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/model/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/model/EmployeeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/model/EmployeeDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/model/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/model/Position.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/model/converter/EmployeeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/model/converter/EmployeeConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/notificator/NotifyObserversAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/notificator/NotifyObserversAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/notificator/ObservableSubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/notificator/ObservableSubject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/notificator/ObserverEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/notificator/ObserverEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/repository/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/repository/DepartmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/repository/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/repository/PositionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/repository/PositionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/repository/SimpleMemStorageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/repository/SimpleMemStorageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/service/DepartmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/service/PositionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/service/PositionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/util/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/util/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/util/MemStorageLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/java/com/personal/designpatternsspringboot/pattern/observer/util/MemStorageLocal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/personal/designpatternsspringboot/DesignPatternsSpringBootApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../observer-pattern/src/test/java/com/personal/designpatternsspringboot/DesignPatternsSpringBootApplicationTests.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="@Aspect" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///pre-request-script-5f84bb96.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2eNetFoVvmyAaKZcHGheKpteUGG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "HTTP Request.generated-requests | #1.executor": "Run",
+    "HTTP Request.generated-requests | #2.executor": "Run",
+    "HTTP Request.generated-requests | #3.executor": "Run",
+    "HTTP Request.generated-requests | #4.executor": "Run",
+    "HTTP Request.generated-requests | #5.executor": "Run",
+    "HTTP Request.generated-requests | #6.executor": "Run",
+    "HTTP Request.generated-requests | #7.executor": "Run",
+    "Maven.design-patterns-spring-boot [clean...].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.DesignPatternsSpringBootApplication.executor": "Run",
+    "aspect.path.notification.shown": "true",
+    "git-widget-placeholder": "feature/design-pattern-observer",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.personal.designpatternsspringboot.pattern.observer.model" />
+      <recent name="com.personal.designpatternsspringboot.pattern.observer.service" />
+      <recent name="com.personal.designpatternsspringboot.pattern.observer.repository" />
+      <recent name="com.personal.designpatternsspringboot.pattern.observer.event" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install -DskipTests=true" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.DesignPatternsSpringBootApplication">
+    <configuration name="generated-requests | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="4" requestIdentifier="#4" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="5" requestIdentifier="#5" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="DesignPatternsSpringBootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="design-patterns-spring-boot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.personal.designpatternsspringboot.DesignPatternsSpringBootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.generated-requests | #4" />
+        <item itemvalue="HTTP Request.generated-requests | #3" />
+        <item itemvalue="HTTP Request.generated-requests | #2" />
+        <item itemvalue="HTTP Request.generated-requests | #1" />
+        <item itemvalue="HTTP Request.generated-requests | #5" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="30d251da-6d04-4344-a4df-7271d5a21902" name="Changes" comment="" />
+      <created>1711749680942</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1711749680942</updated>
+      <workItem from="1711749684877" duration="283000" />
+      <workItem from="1711750047746" duration="54005000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/notificator/ObservableSubject.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/controller/ObserverEmployeeController.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/service/EmployeeService.java</url>
+          <line>30</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/service/EmployeeService.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/notificator/NotifyObserversAspect.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventSendSMS.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/event/EventSendEmail.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/notificator/NotifyObserversAspect.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/notificator/NotifyObserversAspect.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/notificator/NotifyObserversAspect.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/personal/designpatternsspringboot/pattern/observer/notificator/NotifyObserversAspect.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
