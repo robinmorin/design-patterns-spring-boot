@@ -24,7 +24,8 @@ public class MemStorageLocal {
     /***
      * Map to store the DataSet instances
      * DataSet are managed by the entity name in library simple-mem-storage  (simple-mem-storage:0.0.1-SNAPSHOT)
-     * Could be need download and build the library to use this class. Reference GitHub:  //TODO: Add GitHub reference
+     * Could be need download and build the library to use this class.
+     * Reference GitHub: @link <a href="https://github.com/robinmorin/design-patterns-spring-boot/tree/simple-mem-storage">Simple Mem Storage Branch</a>
      */
     private static final Map<String, DataSet<?>> dataSets = new ConcurrentHashMap<>();
 
