@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @OpenAPIDefinition(info = @Info(
         title = "Observer Pattern API Practice",
-        version = "0.0.1-SNAPSHOT",
+        version = "1.0.0",
         description = "Project to practice the Observer Pattern with Spring Boot"
 ))
 public class OpenApiConfig {
