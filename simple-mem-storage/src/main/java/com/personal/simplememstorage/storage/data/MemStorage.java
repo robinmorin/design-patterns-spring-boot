@@ -1,5 +1,7 @@
 package com.personal.simplememstorage.storage.data;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -27,6 +29,14 @@ public abstract class MemStorage<K,V> {
 
     public Optional<V> getObject(K id) {
         return Optional.ofNullable(mapContainer.get(id));
+    }
+
+    public Optional<K> getLastObject() {
+        return mapContainer.keySet().stream().sorted((k1, k2) -> ((Comparable<K>) k2).compareTo(k1)).findFirst();
+    }
+
+    public Optional<List<V>> getAllObjects() {
+        return Optional.of(mapContainer.values().stream().toList());
     }
 
 }
