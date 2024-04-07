@@ -33,10 +33,9 @@ public class MemStorageLocal {
      * Get the DataSet for the given entity
      * @param entity
      * @return Optional<DataSet<T>>
-     * @param <T>
      */
     @SuppressWarnings("unchecked")
-    public <T> Optional<DataSet<T>> getDataSet(Class<T> entity) {
+    private  <T> Optional<DataSet<T>> getDataSet(Class<T> entity) {
         try {
             var dataset = dataSets.get(entity.getSimpleName().toUpperCase());
             if(Objects.isNull(dataset)) {
@@ -75,7 +74,6 @@ public class MemStorageLocal {
      * check if the class has a field marked with @IdObject annotation
      * @param clazz
      * @return DataSet<T>
-     * @param <T>
      * @throws InvalidClassException
      */
     private <T> DataSet<T> createDataSetInstance(Class<T> clazz) throws InvalidClassException {
@@ -100,7 +98,6 @@ public class MemStorageLocal {
      * Save/Replace an item in the DataSet
      * @param item
      * @return
-     * @param <T>
      */
     @SuppressWarnings("unchecked")
     public <T> T saveItem(T item) {
@@ -113,13 +110,37 @@ public class MemStorageLocal {
      * @param idItem Id of the item to get
      * @param tClass Class Type of the item to get
      * @return Optional<T>
-     * @param <T>
-     * @param <S>
+     * @throws HttpClientErrorException When Dataset for the given class is not found
      */
     public <T,S> Optional<T> getItem(S idItem, Class<T> tClass) {
         var ds = getDataSet(tClass);
         return ds.map(objectDataSet -> objectDataSet.getItem(idItem))
                      .orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND,"Record not found"));
     }
+
+    /***
+     * Get the last item from the DataSet
+     * @param tClass Class Type of the item to get
+     * @return Optional<T>
+     * @throws HttpClientErrorException When Dataset for the given class is not found
+     */
+    @SuppressWarnings("unchecked")
+    public <T,S> Optional<S> getLastItem(Class<T> tClass) {
+        var ds = getDataSet(tClass);
+        return (Optional<S>) ds.map(DataSet::getLastItem)
+                     .orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND,"Record not found"));
+    }
+
+    /***
+     * Get a list of item from the DataSet
+     * @param tClass Class Type of the item to get
+     * @return Optional<T>
+     */
+    public <T> Optional<List<T>> getAllItems(Class<T> tClass) {
+        var ds = getDataSet(tClass);
+        return ds.map(DataSet::getAllItemsInDataSet)
+                .orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND,"Record not found"));
+    }
+
 
 }

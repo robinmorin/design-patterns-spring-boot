@@ -23,9 +23,10 @@ public class InitConfig {
         populateDataset(memStorageLocal);
     }
 
+
     private void populateDataset(MemStorageLocal memStorageLocal) {
-        for(int i = 0; i<10; i++) {
-            var prod = Product.builder().id(String.valueOf(i))
+        for(int i = 1; i<=10; i++) {
+            var prod = Product.builder().id(i)
                                         .name("Product "+i)
                                         .description("Product "+i+" Description")
                                         .price(BigDecimal.valueOf(100))

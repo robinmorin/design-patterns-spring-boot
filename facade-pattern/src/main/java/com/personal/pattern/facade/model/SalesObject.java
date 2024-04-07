@@ -1,34 +1,54 @@
 package com.personal.pattern.facade.model;
 
+import com.personal.simplememstorage.storage.annotations.IdObject;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-
-
+/***
+ * Sales Object Entity for Sales
+ */
 @RequiredArgsConstructor
 public class SalesObject {
-    private final String orderId;
+    @IdObject
+    @Getter
+    public final String saleId;
     private final String identification;
-    private final List<Product> products = new ArrayList<>();
+    private final List<SaleItem> saleItemImpls = new ArrayList<>();
 
     @Setter
-    private boolean active;
+    public boolean active = true;
 
     @Getter
     private BigDecimal total;
 
-    public boolean addProduct(Product product) {
-        var addResult = products.add(product);
+    public void addProduct(Integer productId, int quantity, BigDecimal price) {
+        saleItemImpls.add(SaleItemImpl.builder().productId(productId).quantity(quantity).price(price).build());
         calculateTotal();
-        return addResult;
     }
+
+    public List<SaleItem> getSaleItems() {
+        return Collections.unmodifiableList(saleItemImpls);
+    }
+
     private void calculateTotal() {
-        total = products.stream().map(Product::getPrice).reduce(BigDecimal.ZERO, BigDecimal::add);
+        total = saleItemImpls.stream().map(saleItem -> saleItem.price().multiply(BigDecimal.valueOf(saleItem.quantity()))).reduce(BigDecimal.ZERO, BigDecimal::add);
+    }
+
+    @Builder
+    private record SaleItemImpl(Integer productId, int quantity, BigDecimal price) implements SaleItem {
+    }
+
+    public interface SaleItem {
+        Integer productId();
+        int quantity();
+        BigDecimal price();
     }
 
 }

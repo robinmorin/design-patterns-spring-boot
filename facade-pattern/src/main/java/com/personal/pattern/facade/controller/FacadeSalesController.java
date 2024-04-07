@@ -1,13 +1,14 @@
 package com.personal.pattern.facade.controller;
 
 import com.personal.pattern.facade.facade.SalesFacade;
+import com.personal.pattern.facade.model.SalesObject;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -15,23 +16,23 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.Map;
 
 /***
- * Observer Employee Controller
+ * Facade Sales Controller
  * <p>
- *     This class is a controller class for Employee Entity
- *     This class is responsible for handling the Employee Entity requests
+ *     This class is a controller class for Sales Facade
+ *     This class is responsible for handling the Sales requests
  * </p>
  */
 @RestController
 @RequestMapping("/facade/sales")
 @RequiredArgsConstructor
-@Tag(name = "Sales", description = "Practice Sales Controller")
 public class FacadeSalesController {
 
     private final SalesFacade salesFacade;
 
-    @Operation(summary = "New Employee add operation")
+    @Operation(tags = "Sales", summary = "New Sale add operation")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Void.class))),
             @ApiResponse(responseCode = "400", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
@@ -40,78 +41,60 @@ public class FacadeSalesController {
             @ApiResponse(responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
         }
     )
-    @PostMapping(value = "/new", consumes = "application/json", produces = "application/json")
+    @Parameter(name = "identification", description = "Identification of Client")
+    @PostMapping(value = "/{identification}/new", consumes = "application/json", produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<Object> createNewEmployee(@RequestBody Employee employee) {
-        employeeService.addEmployee(employee);
-        URI location = URI.create("/observer/Employee/" + employee.getId());
+    public ResponseEntity<Object> createNewSale(@PathVariable String identification, @RequestBody Map<Integer, Integer> prodQuantity) {
+        var saleId = salesFacade.createSale(identification, prodQuantity);
+        URI location = URI.create("/facade/sales/"+saleId);
         return ResponseEntity.created(location).build();
     }
 
-    @Operation(summary = "Getting Employee Info operation")
+    @Operation(tags = "Sales", summary = "Getting Sale Info operation")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Employee.class))),
+            @ApiResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = SalesObject.class))),
             @ApiResponse(responseCode = "400", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
             @ApiResponse(responseCode = "404", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
             @ApiResponse(responseCode = "422", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
             @ApiResponse(responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
         }
     )
-    @Parameter(name = "id", description = "Id of Employee")
-    @GetMapping(value = "/{id}", produces = "application/json")
-    public ResponseEntity<Object> getEmployee(@PathVariable Integer id) {
-        return ResponseEntity.ok(employeeService.getEmployee(id));
+    @Parameter(name = "saleId", description = "Id of Sale")
+    @GetMapping(value = "/{saleId}", produces = "application/json")
+    public ResponseEntity<Object> getSale(@PathVariable String saleId) {
+        return ResponseEntity.ok(salesFacade.getSale(saleId));
     }
 
-    @Operation(summary = "Updating Employee Active Status operation")
+    @Operation(tags = "Sales", summary = "Change Status Sale and reverse the inventory operation")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "204", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Void.class))),
+            @ApiResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = SalesObject.class))),
             @ApiResponse(responseCode = "400", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
             @ApiResponse(responseCode = "404", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
             @ApiResponse(responseCode = "422", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
             @ApiResponse(responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
         }
     )
-    @Parameter(name = "id", description = "Id of Employee")
-    @Parameter(name = "active", description = "Status of Employee")
-    @PatchMapping(value = "/{id}/status", produces = "application/json")
-    public ResponseEntity<Object> updateStatusEmployee(@PathVariable Integer id, @RequestParam Boolean active) {
-        employeeService.updateStatus(id, active);
+    @Parameter(name = "saleId", description = "Id of Sale")
+    @PutMapping(value = "/{saleId}", produces = "application/json")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public ResponseEntity<Object> cancelSale(@PathVariable String saleId) {
+        salesFacade.cancelSale(saleId);
         return ResponseEntity.noContent().build();
     }
 
-    @Operation(summary = "Update Employee Position operation")
+    @Operation(tags = "Sales", summary = "List Sales operations")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "204", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Void.class))),
+            @ApiResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, array = @ArraySchema(schema = @Schema(implementation = SalesObject.class)))),
             @ApiResponse(responseCode = "400", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
             @ApiResponse(responseCode = "404", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
             @ApiResponse(responseCode = "422", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
             @ApiResponse(responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
         }
     )
-    @Parameter(name = "id", description = "Id of Employee")
-    @Parameter(name = "positionId", description = "Existing Position Id")
-    @PatchMapping(value = "/{id}/position/{positionId}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Object> updatePositionEmployee(@PathVariable Integer id, @PathVariable Integer positionId) {
-        employeeService.updatePosition(id, positionId);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    @GetMapping(value = "/list", produces = "application/json")
+    public ResponseEntity<Object> listSales() {
+        return ResponseEntity.ok(salesFacade.listSales());
     }
 
-    @Operation(summary = "Update Employee Department operation")
-    @ApiResponses(value = {
-            @ApiResponse(responseCode = "204", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Void.class))),
-            @ApiResponse(responseCode = "400", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
-            @ApiResponse(responseCode = "404", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
-            @ApiResponse(responseCode = "422", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
-            @ApiResponse(responseCode = "500", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = Error.class))),
-    }
-    )
-    @Parameter(name = "id", description = "Id of Employee")
-    @Parameter(name = "departmentId", description = "Existing Department Id")
-    @PatchMapping(value = "/{id}/department/{departmentId}", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Object> updateDepartmentEmployee(@PathVariable Integer id, @PathVariable Integer departmentId) {
-        employeeService.updateDepartment(id, departmentId);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-    }
 
 }
