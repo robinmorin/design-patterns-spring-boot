@@ -4,3 +4,7 @@
 simple-mem-storage/mvnw
 simple-mem-storage/mvnw.cmd
 /.idea
+*.iml
+/abstract-factory-pattern/.mvn
+abstract-factory-pattern/mvnw
+abstract-factory-pattern/mvnw.cmd
