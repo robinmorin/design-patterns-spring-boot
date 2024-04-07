@@ -3,6 +3,7 @@ package com.personal.simplememstorage.storage.data;
 import com.personal.simplememstorage.storage.annotations.IdObject;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 
@@ -31,6 +32,14 @@ public class DataSet<V> {
         return data.getObject(id);
     }
 
+    public <K> Optional<K> getLastItem() {
+        return (Optional<K>) data.getLastObject();
+    }
+
+    public Optional<List<V>> getAllItemsInDataSet() {
+        return data.getAll();
+    }
+
     public Consumer<V> saveItem() {
         return data::save;
     }
@@ -44,6 +53,8 @@ public class DataSet<V> {
         V save(V object);
         V update(K id, V newObject);
         Optional<V> getObject(K id);
+        Optional<K> getLastObject();
+        Optional<List<V>> getAll();
     }
 
     /***
@@ -71,6 +82,10 @@ public class DataSet<V> {
          */
         public V save(V object) {
             return super.save(getIdFieldValue(object), object);
+        }
+
+        public Optional<List<V>> getAll() {
+            return super.getAllObjects();
         }
 
         /***
